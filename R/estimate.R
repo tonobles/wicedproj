@@ -125,8 +125,8 @@ call_stan <- function(x) {
               # sample_file = 'samples',
               # diagnostic_file = 'diagnostics',
               seed = 1020,
-              chains = 4,
-              iter = 250,
+              chains = 1,
+              iter = 25,
               init_r = 1,
               refresh = 10,
               control = list(max_treedepth = 12,
@@ -162,7 +162,7 @@ extract_helper <- function(x, parStr)
 {
   rstan::extract(x, parStr)[[parStr]] %>%
   {reshape2::melt(.)} 											           %>%
-  set_names(c('iteration', 'gender',
+  setNames(c('iteration', 'gender',
               'level', 'country',
               'year', 'value'))		     %>%
   within(., {

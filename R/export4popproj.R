@@ -6,7 +6,7 @@
 #'
 #'
 export4popproj <- .     %>%
-  extract_single_future %>%
+  extract_1future       %>%
   uncumulate            %>%
   backproject           %>%
   calc_noed             %>%
@@ -19,10 +19,10 @@ export4popproj <- .     %>%
 #' Title
 #'
 #'
-extract_single_future <- function(x) {
+extract_1future <- function(x) {
   x %>%
   filter(
-    variable == 'md' &
+    variable == ifelse(scenario == 'TGT', 'lo', 'md') &
     year     >= 2010)  %>%
   select(-variable)
 }

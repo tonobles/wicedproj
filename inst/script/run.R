@@ -50,19 +50,3 @@ low_proj <-
   add_target('loS', .97, 2030) %>%
   edproj
 save(low_proj, file = 'low_proj.rda')
-
-efa_proj <-
-  wicdf %>%
-  filter(year <= 2000) %>%
-  add_target('P', .97, 2015) %>%
-  edproj
-save(efa_proj, file = 'sdg_proj.rda')
-
-ssa_proj <-
-  wicdf %>%
-  filter(
-    region != 'Sub-Saharan Africa' |
-    year <= 1980) %>%
-  add_target('P', .97, 2015) %>%
-  edproj
-save(ssa_proj, file = 'ssa_proj.rda')

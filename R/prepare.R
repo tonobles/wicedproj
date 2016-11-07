@@ -74,7 +74,7 @@ age_thresholding <- function(x) {
         year == baseline &
           age_group == '15--19' &
           level %in% c('someP', 'P')) %>%
-      mutate(year = year + 10)
+      mutate(year = year + 15)
   ) %>%
   select(-age_group)
 }
