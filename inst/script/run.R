@@ -1,3 +1,7 @@
+devtools::install_github("bifouba/wicedproj", auth_token = "f0ae9f36b94bd2c90532433a71597a6b1946224a")
+
+library(wicedproj)
+
 baseline_years <-
   readr::read_csv('data/backproj_baseline_year.csv',
                   col_types = 'cii')	%>%
