@@ -119,6 +119,7 @@ options(mc.cores = parallel::detectCores())
 #'
 #'
 call_stan <- function(x) {
+  if (edprojOPTS$testing) {
   rstan::stan(data = x,
               model_code = stan_model,
               # file = 'model.stan',
@@ -131,6 +132,17 @@ call_stan <- function(x) {
               refresh = 10,
               control = list(max_treedepth = 12,
                              adapt_delta   = .65))
+  } else {
+    rstan::stan(data = x,
+                model_code = stan_model,
+                seed = 1020,
+                chains = 1,
+                iter = 25,
+                init_r = 1,
+                refresh = 10,
+                control = list(max_treedepth = 12,
+                               adapt_delta   = .65))
+  }
 }
 
 #-----------------------------------------------------
