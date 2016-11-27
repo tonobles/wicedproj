@@ -10,7 +10,12 @@ Depends:
     rstan
 Imports:
     settings,
-    readr
+    readr,
+    tidyr,
+    rlist,
+    reshape2,
+    parallel,
+    forcats
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

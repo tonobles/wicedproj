@@ -19,7 +19,7 @@ stanify_input <- function(x, simple = FALSE) {
                                 attainers  = 0,
                                 status     = 'proj')) 				%>%
     arrange(year, country, level, gender) 					%>%
-    as.list 												%>% #browser %>%
+    as.list 												%>%
     within(., {
       #
       # dimensions
