@@ -1,4 +1,7 @@
-devtools::install_github("bifouba/wicedproj", auth_token = "f0ae9f36b94bd2c90532433a71597a6b1946224a")
+#
+#
+#
+
 
 library(wicedproj)
 
@@ -29,28 +32,21 @@ wicdf <-
   age_thresholding                  %>%
   select(-baseline)
 
+# list of countries that actually entered the estimation
 data_countries <- get_data_countries(wicdf)
 
-sdg_trgt <-
-  wicdf										    %>%
-  select(gender, level,
-         region, country)			%>%
-  distinct 										%>%
-  filter(level %in% c('upS')) %>%
-  mutate(
-    year       = 2045,
-    population = popN,
-    attainers  = .97 * popN
-  )
-
+# SDG scenario of
+# universal UPPER secondary by 2030
 sdg_proj <-
   wicdf %>%
   add_target('upS', .97, 2030) %>%
   edproj
-save(sdg_proj, file = 'sdg_proj.rda')
+save(sdg_proj, file = 'sdg_edu_proj.rda')
 
+# alternative scenario of
+# universal LOWER secondary by 2030
 low_proj <-
   wicdf %>%
   add_target('loS', .97, 2030) %>%
   edproj
-save(low_proj, file = 'low_proj.rda')
+save(low_proj, file = 'low_edu_proj.rda')

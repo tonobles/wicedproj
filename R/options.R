@@ -9,8 +9,10 @@ edprojOPTS <- settings::options_manager(
 #' @section Supported options:
 #' The following options are supported:
 #' \itemize{
-#'   \item{\code{a}}{(\code{numeric};1) The value of a}
+#'   \item{\code{testing}}{(\code{boolean};1) Whether to run only a single chain for a few iterations
+#'   for testing purposes.}
 #' }
+#' @export
 wicedproj_options <- function(...) {
   # check against use of reserved words
   settings::stop_if_reserved(...)

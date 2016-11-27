@@ -8,7 +8,7 @@ wic_prepare(x)
 }
 \arguments{
 \item{df}{Input data of (reconstructed) attainment. Assumed to contain
-variables: country (factor), region (factor), gender (factor), age_group (factor), year (numeric), level
+variables: \code{country} (factor), region (factor), gender (factor), age_group (factor), year (numeric), level
 (factor, increasing order, including residual category),}
 }
 \description{

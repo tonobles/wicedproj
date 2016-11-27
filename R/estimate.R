@@ -2,22 +2,16 @@
 #--- combined pipeline
 #-----------------------------------------------------
 
-#' Title
-#'
-#'
 estimate <- .         %>%
   stanify_input       %>%
   call_stan           %>%
-  # check_convergence   %>%
+  check_convergence   %>%
   extract_projections
 
 #-----------------------------------------------------
 #--- create STAN input
 #-----------------------------------------------------
 
-#' Title
-#'
-#'
 stanify_input <- function(x, simple = FALSE) {
   x %>%
   tidyr::complete(gender, level, tidyr::nesting(region, country), year,
@@ -115,9 +109,6 @@ stanify_input <- function(x, simple = FALSE) {
 rstan::rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
 
-#' Title
-#'
-#'
 call_stan <- function(x) {
   if (edprojOPTS$testing) {
   rstan::stan(data = x,
@@ -149,9 +140,6 @@ call_stan <- function(x) {
 #--- diagnostics
 #-----------------------------------------------------
 
-#' Title
-#'
-#'
 check_convergence <- function(x) {
   print("Checking convergence...")
   rstan_diagnostic_summary <- summary(x)$summary
@@ -167,9 +155,6 @@ check_convergence <- function(x) {
 #--- extract results
 #-----------------------------------------------------
 
-#' Title
-#'
-#'
 extract_helper <- function(x, parStr)
 {
   rstan::extract(x, parStr)[[parStr]] %>%
@@ -186,9 +171,6 @@ extract_helper <- function(x, parStr)
   left_join(data_countries, by = 'country')
 }
 
-#' Title
-#'
-#'
 extract_projections <- function(x)
 {
   bind_rows(

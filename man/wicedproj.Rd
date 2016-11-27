@@ -4,8 +4,10 @@
 \name{wicedproj}
 \alias{wicedproj}
 \alias{wicedproj-package}
-\title{\code{wicedproj}: A package for [TO COMPLETE]}
+\title{\code{wicedproj}: A package implementing the
+Education Projection Model of the Wittgenstein Centre for Demography and Global Human Capital.}
 \description{
-\code{wicedproj}: A package for [TO COMPLETE]
+\code{wicedproj}: A package implementing the
+Education Projection Model of the Wittgenstein Centre for Demography and Global Human Capital.
 }
 
