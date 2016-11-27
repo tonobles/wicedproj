@@ -1,6 +1,6 @@
 Package: wicedproj
 Title: Education Projection Model of the Wittgenstein Centre for Demography and Global Human Capital
-Version: 1.0.0
+Version: 0.9.0
 Authors@R: person("Bilal", "Barakat", email = "bilal.barakat@oeaw.ac.at", role = c("aut", "cre"))
 Description: The `wicedproj` R package contains code implementing the projection model of educational attainment 
     of the Wittgenstein Centre for Demography and Global Human Capital. 
