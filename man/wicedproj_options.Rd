@@ -14,7 +14,7 @@ Set or get options for oostypo package
 }
 \section{Supported options}{
 
-The following options are supported:
+The following options are currently supported:
 \itemize{
   \item{\code{testing}}{(\code{boolean};1) Whether to run only a single chain for a few iterations
   for testing purposes.}

@@ -2,9 +2,6 @@
 #=== combined pipeline
 #=============================================
 
-#' Title
-#'
-#'
 export4popproj <- .     %>%
   extract_1future       %>%
   uncumulate            %>%
@@ -16,9 +13,6 @@ export4popproj <- .     %>%
 #=== median future projections only
 #=============================================
 
-#' Title
-#'
-#'
 extract_1future <- function(x) {
   x %>%
   filter(
@@ -31,9 +25,6 @@ extract_1future <- function(x) {
 #=== 'at least ed x' -> 'exactly ed x'
 #=============================================
 
-#' Title
-#'
-#'
 uncumulate <- function(x) {
   x							                   %>%
   group_by(
@@ -101,9 +92,6 @@ schedules <-
   select(-finalEd)	                        %>%
   data.frame
 
-#' Title
-#'
-#'
 backproject <- function(x) {
 	x					                       %>%
   left_join(schedules, by = 'level') %>%
@@ -121,9 +109,6 @@ backproject <- function(x) {
 #=== residual 'no education' category
 #=============================================
 
-#' Title
-#'
-#'
 calc_noed <- function(x) {
   x %>%
   tidyr::spread(level, value)				 %>%

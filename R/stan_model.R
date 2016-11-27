@@ -1,15 +1,4 @@
 stan_model <- "
-	/*
-	 * Wittgenstein Centre for Demography and Global Human Capital
-*
-* Multi-Level Educational Attainment Expansion Model
-* --------------------------------------------------
-* Copyright: Bilal Barakat <bilal.barakat@oeaw.ac.at>
-* Date: 1 November 2015
-* License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
-*
-*/
-
 functions{
 }
 
@@ -168,7 +157,6 @@ probs[m] = probs[m] + trend_shift[ee,1,cc] * shift_year_obs[tt,ee];
 }
 
 obs ~ normal(head(probs, N_obs), 0.05);
-# tgt ~ normal(tail(probs, N_tgt), 0.05);
 -tgt ~ exp_mod_normal(-tail(probs, N_tgt), 0.05, 0.5);
 }
 

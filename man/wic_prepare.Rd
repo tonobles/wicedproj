@@ -2,16 +2,32 @@
 % Please edit documentation in R/prepare.R
 \name{wic_prepare}
 \alias{wic_prepare}
-\title{Title}
+\title{Pre-process Data from the Wittgenstein DataExplorer}
 \usage{
 wic_prepare(x)
 }
 \arguments{
 \item{df}{Input data of (reconstructed) attainment. Assumed to contain
-variables: \code{country} (factor), region (factor), gender (factor), age_group (factor), year (numeric), level
-(factor, increasing order, including residual category),}
+variables:
+\code{country} (factor),
+\code{region} (factor),
+\code{gender} (factor),
+\code{age_group} (factor),
+\code{year} (numeric),
+\code{level} (factor, increasing order, including residual category),
+\code{attainers} (numeric) see details below,
+\code{population} (numeric) see details below.}
 }
 \description{
-Title
+Description
+}
+\details{
+When dealing with real historic data, the number of \code{attainers} at a given level
+out of a \code{population} of a given size can be provided as observed,
+and the estimation will take sample variation duly into account.
+However, in the application to \emph{reconstructed} attainment data, the error in a given
+observation is not necessarily related to population size.
+
+Note that
 }
 

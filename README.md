@@ -27,6 +27,9 @@ However, helpful starting points are available in the documentation for the `dev
 
 # Usage
 
+An example script is included in the `inst/script` directory 
+(after installation, this gets moved up one level to `script` directly under the root directory). 
+This estimation makes use of an extract of the Wittgenstein Centre's [database](http://www.oeaw.ac.at/vid/dataexplorer/) of reconstructed educational attainment time series that is included with the `wicedproj` package in CSV format.
 
 Because the full estimation is computationally intensive (running approx. 5 hours per scenario on my system),
 a much faster "testing" mode can be enabled (that runs only a single Markov Chain for a small number of iterations) 

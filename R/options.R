@@ -7,7 +7,7 @@ edprojOPTS <- settings::options_manager(
 #' @param ... Option names to retrieve option values or \code{[key]=[value]} pairs to set options.
 #'
 #' @section Supported options:
-#' The following options are supported:
+#' The following options are currently supported:
 #' \itemize{
 #'   \item{\code{testing}}{(\code{boolean};1) Whether to run only a single chain for a few iterations
 #'   for testing purposes.}

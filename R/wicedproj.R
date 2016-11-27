@@ -7,10 +7,6 @@
 #' @name wicedproj
 NULL
 
-#' Title
-#'
-#' @param df
-#'
 #' @export
 edproj <- function(x) {
   x %>%
