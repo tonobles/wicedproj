@@ -19,7 +19,7 @@ NULL
 edproj <- function(x) {
 
   # list of countries that actually entered the estimation
-  data_countries <- get_data_countries(x)
+  data_countries <<- get_data_countries(x)
 
   x %>%
   estimate %>%
