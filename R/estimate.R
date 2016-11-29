@@ -110,7 +110,7 @@ rstan::rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
 
 call_stan <- function(x) {
-  if (edprojOPTS$testing) {
+  if (!edprojOPTS('testing')) {
   rstan::stan(data = x,
               model_code = stan_model,
               # file = 'model.stan',
@@ -141,6 +141,7 @@ call_stan <- function(x) {
 #-----------------------------------------------------
 
 check_convergence <- function(x) {
+  if (!edprojOPTS('testing')) {
   print("Checking convergence...")
   rstan_diagnostic_summary <- summary(x)$summary
   cat(rstan_diagnostic_summary, file = 'rstan_diagnostic_summary.txt')
@@ -149,6 +150,7 @@ check_convergence <- function(x) {
     {print("Non-convergence in at least one MCMC chain")
      return(NA)}
   else {return(x)}
+  } else {return(x)}
 }
 
 #-----------------------------------------------------

@@ -2,32 +2,26 @@
 % Please edit documentation in R/prepare.R
 \name{wic_prepare}
 \alias{wic_prepare}
-\title{Pre-process Data from the Wittgenstein DataExplorer}
+\title{Pre-process Wittgenstein DataExplorer extract}
 \usage{
 wic_prepare(x)
 }
-\arguments{
-\item{df}{Input data of (reconstructed) attainment. Assumed to contain
-variables:
-\code{country} (factor),
-\code{region} (factor),
-\code{gender} (factor),
-\code{age_group} (factor),
-\code{year} (numeric),
-\code{level} (factor, increasing order, including residual category),
-\code{attainers} (numeric) see details below,
-\code{population} (numeric) see details below.}
-}
 \description{
-Description
+Function \code{wic_prepare} puts data from the Wittgenstein DataExplorer extract
+into the correct input format for the education projection. For the most part,
+this involves straightforward operations, with two exceptions noted in the details below.
 }
 \details{
 When dealing with real historic data, the number of \code{attainers} at a given level
 out of a \code{population} of a given size can be provided as observed,
 and the estimation will take sample variation duly into account.
 However, in the application to \emph{reconstructed} attainment data, the error in a given
-observation is not necessarily related to population size.
+observation is not necessarily related to population size. All observations are therefore
+treated as referring to a population of size 10,000.
 
-Note that
+The raw data extract contains entries for all age groups. The education projection
+model uses the age group 30-34 as a reference age group. However, presently it is
+assumed that post-secondary and upper secondary attainment is largely complete by age 25-29,
+lower secondary by 20--24, and primary by 15--19.
 }
 
