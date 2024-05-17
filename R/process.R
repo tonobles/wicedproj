@@ -55,7 +55,8 @@ scale_factors <- function(x) {
 }
 
 ceiling <- function(x, obs) {
-  x %>%
+  x %>% 
+  mutate(level = factor(level, orderd = FALSE)) %>%
   mutate(
     rescale_postS =
       level == 'postS' &
